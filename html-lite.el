@@ -211,6 +211,16 @@ Indent tag to column INDENT."
           (insert element "\n"))))
      tree)))
 
+(defun html-lite-write-tree-single-line (tree &optional indent)
+  "Write tree to buffer.
+All on the same line"
+  (mapc
+   (lambda (element)
+     (cond ((listp element)
+            (html-lite-write-tree-single-line element))
+           (t (insert element))))
+   tree))
+
 (defun html-lite-browse-tree (tree)
   "Browse TREE.
 Variable`browse-url-browser-function' says which browser to use."

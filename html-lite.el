@@ -295,6 +295,9 @@ Variable`browse-url-browser-function' says which browser to use."
 ;; DOCUMENT STRUCTURE
 (html-lite-define-elements "html")
 
+;; HTML5
+(html-lite-define-elements "header")
+
 
 (provide 'html-lite)
 ;;; html-lite.el ends here
